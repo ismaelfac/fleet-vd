@@ -16,7 +16,7 @@ class SchedulerController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Scheduler::all());
     }
 
     /**

@@ -16,7 +16,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Route::all());
     }
 
     /**
