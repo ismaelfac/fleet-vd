@@ -19,6 +19,9 @@ class Scheduler extends Model
 
     protected $fillable = ['route_id','week_num','from','to','active','user_id'];
 
-    
+    public function Route()
+    {
+        return $this->belongsTo('App\Models\Route');
+    }
 
 }

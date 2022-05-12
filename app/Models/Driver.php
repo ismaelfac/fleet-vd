@@ -18,4 +18,9 @@ class Driver extends Model
     protected $perPage = 20;
 
     protected $fillable = ['first_name','last_name','ssn','dob','address','city','zip','phone','active','user_id'];
+
+    public function route()
+    {
+        return $this->belongsTo('App\Models\Route', 'driver_id', 'id');
+    }
 }

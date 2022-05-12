@@ -17,4 +17,9 @@ class Vehicle extends Model
     protected $perPage = 20;
 
     protected $fillable = ['description','year','make','capacity','active','user_id'];
+
+    public function route()
+    {
+        return $this->belongsTo('App\Models\Route', 'vehicle_id', 'id');
+    }
 }
