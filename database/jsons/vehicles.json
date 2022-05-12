@@ -1,0 +1,82 @@
+[
+    {
+        "user_id": 1,
+        "description": "ABC - 1234",
+        "year": "1990",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "ABC - 12D",
+        "year": "2002",
+        "make": "Transporte Liquidos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "ABC - D12",
+        "year": "2020",
+        "make": "Camion 12 ejes",
+        "capacity": "25 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "DEF - D13",
+        "year": "2022",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "HHV - 256",
+        "year": "2015",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "DOC - F23",
+        "year": "2018",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "EER - 520",
+        "year": "2013",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "ABC - D20",
+        "year": "2013",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "ABC - 1234",
+        "year": "1990",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "description": "ABC - 1234",
+        "year": "1990",
+        "make": "Transporte de Alimentos",
+        "capacity": "30 Ton",
+        "active": true
+    }
+]

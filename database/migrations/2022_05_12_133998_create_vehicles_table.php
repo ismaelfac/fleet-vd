@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade');
             $table->string('description');
-            $table->date('year');
+            $table->string('year');
             $table->string('make');
             $table->string('capacity');
             $table->boolean('active')->default(false);

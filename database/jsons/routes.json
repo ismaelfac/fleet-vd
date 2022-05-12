@@ -1,0 +1,72 @@
+[
+    {
+        "user_id": 1,
+        "driver_id": 1,
+        "vehicle_id": 10,
+        "description": "Pacific Coast Highway (California)",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 2,
+        "vehicle_id": 2,
+        "description": "Overseas Highway",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 3,
+        "vehicle_id": 3,
+        "description": "PAntelope Valley Freeway",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 4,
+        "vehicle_id": 4,
+        "description": "De Anchorage a Valdez",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 5,
+        "vehicle_id": 5,
+        "description": "Going-to-the-Sun Road",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 6,
+        "vehicle_id": 6,
+        "description": "Blue Ridge Parkway",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 7,
+        "vehicle_id": 7,
+        "description": "Great River Road",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 8,
+        "vehicle_id": 8,
+        "description": "Ruta 66",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 9,
+        "vehicle_id": 9,
+        "description": "Hill Country Hideways",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "driver_id": 10,
+        "vehicle_id": 1,
+        "description": "Los Ángeles, San Francisco, Las Vegas, Yosemite, Gran Cañón y Monument Valley",
+        "active": true
+    }
+]

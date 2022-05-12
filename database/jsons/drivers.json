@@ -1,0 +1,122 @@
+[
+    {
+        "user_id": 1,
+        "first_name": "Kemmer",
+        "last_name": "Eudora",
+        "ssn": "466-05-7545",
+        "dob": "19700410",
+        "address": "219 Leonard Harbors Suite 599 Mohamedbury",
+        "city": "Oregon",
+        "zip": "TX 64629",
+        "phone": "+14844458018",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Maggio",
+        "last_name": "Adell",
+        "ssn": "138-32-3503",
+        "dob": "19960604",
+        "address": "24154 Dooley Summit Port Veronastad",
+        "city": "Oregon",
+        "zip": "NJ 06581-5337",
+        "phone": "+18143511283",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Kemmer",
+        "last_name": "Eudora",
+        "ssn": "466-05-7545",
+        "dob": "19700410",
+        "address": "219 Leonard Harbors Suite 599 Mohamedbury",
+        "city": "Oregon",
+        "zip": "TX 64629",
+        "phone": "+14844458018",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Schmitt",
+        "last_name": "Arturo",
+        "ssn": "471-40-9963",
+        "dob": "19930731",
+        "address": "113 Strosin Fort Apt. 077 Bayerview",
+        "city": "Oregon",
+        "zip": "MN 87865",
+        "phone": "+14842989713",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Kemmer",
+        "last_name": "Eudora",
+        "ssn": "466-05-7545",
+        "dob": "19700410",
+        "address": "219 Leonard Harbors Suite 599 Mohamedbury",
+        "city": "Oregon",
+        "zip": "TX 64629",
+        "phone": "+14844458018",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Steuber",
+        "last_name": "Edd",
+        "ssn": "601-54-5289",
+        "dob": "19831013",
+        "address": "77092 Stroman Rue New Brooklyn",
+        "city": "Oregon",
+        "zip": "AZ 26354",
+        "phone": "+14845211043",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Kemmer",
+        "last_name": "Eudora",
+        "ssn": "466-05-7545",
+        "dob": "19700410",
+        "address": "219 Leonard Harbors Suite 599 Mohamedbury",
+        "city": "Oregon",
+        "zip": "TX 64629",
+        "phone": "+14844458018",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Green",
+        "last_name": "Brad",
+        "ssn": "420-39-3375",
+        "dob": "19800314",
+        "address": "2116 Beier Mountain Port Nolachester",
+        "city": "Oregon",
+        "zip": "AL 41161-7768",
+        "phone": "+14844578901",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Morar",
+        "last_name": "Andres",
+        "ssn": "298-82-4564",
+        "dob": "19800701",
+        "address": "459 Daphne Burgs New Danehaven",
+        "city": "Oregon",
+        "zip": "OH 97980-6321",
+        "phone": "+16102458706",
+        "active": true
+    },
+    {
+        "user_id": 1,
+        "first_name": "Borer",
+        "last_name": "Kurt",
+        "ssn": "659-14-5810",
+        "dob": "19760505",
+        "address": "3882 Lang Branch Weissnatstad",
+        "city": "Oregon",
+        "zip": "LA 36845-7684",
+        "phone": "+14842634728",
+        "active": true
+    }
+]
