@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Driver;
-use App\Http\Requests\StoreDriverRequest;
-use App\Http\Requests\UpdateDriverRequest;
+use App\Models\Vehicle;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreVehicleRequest;
+use App\Http\Requests\UpdateVehicleRequest;
 
-class DriverController extends Controller
+class VehicleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class DriverController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDriverRequest  $request
+     * @param  \App\Http\Requests\StoreVehicleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDriverRequest $request)
+    public function store(StoreVehicleRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class DriverController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(Driver $driver)
+    public function show(Vehicle $vehicle)
     {
         //
     }
@@ -53,10 +54,10 @@ class DriverController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function edit(Driver $driver)
+    public function edit(Vehicle $vehicle)
     {
         //
     }
@@ -64,11 +65,11 @@ class DriverController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDriverRequest  $request
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Http\Requests\UpdateVehicleRequest  $request
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDriverRequest $request, Driver $driver)
+    public function update(UpdateVehicleRequest $request, Vehicle $vehicle)
     {
         //
     }
@@ -76,10 +77,10 @@ class DriverController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Driver  $driver
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Driver $driver)
+    public function destroy(Vehicle $vehicle)
     {
         //
     }

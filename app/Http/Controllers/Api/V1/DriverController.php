@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Scheduler;
-use App\Http\Requests\StoreSchedulerRequest;
-use App\Http\Requests\UpdateSchedulerRequest;
+use App\Models\Driver;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreDriverRequest;
+use App\Http\Requests\UpdateDriverRequest;
 
-class SchedulerController extends Controller
+class DriverController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class SchedulerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSchedulerRequest  $request
+     * @param  \App\Http\Requests\StoreDriverRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSchedulerRequest $request)
+    public function store(StoreDriverRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class SchedulerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scheduler  $scheduler
+     * @param  \App\Models\Driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function show(Scheduler $scheduler)
+    public function show(Driver $driver)
     {
         //
     }
@@ -53,10 +54,10 @@ class SchedulerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scheduler  $scheduler
+     * @param  \App\Models\Driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scheduler $scheduler)
+    public function edit(Driver $driver)
     {
         //
     }
@@ -64,11 +65,11 @@ class SchedulerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateSchedulerRequest  $request
-     * @param  \App\Models\Scheduler  $scheduler
+     * @param  \App\Http\Requests\UpdateDriverRequest  $request
+     * @param  \App\Models\Driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSchedulerRequest $request, Scheduler $scheduler)
+    public function update(UpdateDriverRequest $request, Driver $driver)
     {
         //
     }
@@ -76,10 +77,10 @@ class SchedulerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scheduler  $scheduler
+     * @param  \App\Models\Driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Scheduler $scheduler)
+    public function destroy(Driver $driver)
     {
         //
     }

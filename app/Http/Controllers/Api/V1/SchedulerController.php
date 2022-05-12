@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Route;
-use App\Http\Requests\StoreRouteRequest;
-use App\Http\Requests\UpdateRouteRequest;
+use App\Models\Scheduler;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSchedulerRequest;
+use App\Http\Requests\UpdateSchedulerRequest;
 
-class RouteController extends Controller
+class SchedulerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class RouteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreRouteRequest  $request
+     * @param  \App\Http\Requests\StoreSchedulerRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRouteRequest $request)
+    public function store(StoreSchedulerRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class RouteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Scheduler  $scheduler
      * @return \Illuminate\Http\Response
      */
-    public function show(Route $route)
+    public function show(Scheduler $scheduler)
     {
         //
     }
@@ -53,10 +54,10 @@ class RouteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Scheduler  $scheduler
      * @return \Illuminate\Http\Response
      */
-    public function edit(Route $route)
+    public function edit(Scheduler $scheduler)
     {
         //
     }
@@ -64,11 +65,11 @@ class RouteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRouteRequest  $request
-     * @param  \App\Models\Route  $route
+     * @param  \App\Http\Requests\UpdateSchedulerRequest  $request
+     * @param  \App\Models\Scheduler  $scheduler
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRouteRequest $request, Route $route)
+    public function update(UpdateSchedulerRequest $request, Scheduler $scheduler)
     {
         //
     }
@@ -76,10 +77,10 @@ class RouteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Route  $route
+     * @param  \App\Models\Scheduler  $scheduler
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Route $route)
+    public function destroy(Scheduler $scheduler)
     {
         //
     }

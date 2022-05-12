@@ -23,5 +23,4 @@ class Scheduler extends Model
     {
         return $this->belongsTo('App\Models\Route');
     }
-
 }

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Vehicle;
-use App\Http\Requests\StoreVehicleRequest;
-use App\Http\Requests\UpdateVehicleRequest;
+use App\Models\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRouteRequest;
+use App\Http\Requests\UpdateRouteRequest;
 
-class VehicleController extends Controller
+class RouteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class VehicleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreVehicleRequest  $request
+     * @param  \App\Http\Requests\StoreRouteRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreVehicleRequest $request)
+    public function store(StoreRouteRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class VehicleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\Route  $route
      * @return \Illuminate\Http\Response
      */
-    public function show(Vehicle $vehicle)
+    public function show(Route $route)
     {
         //
     }
@@ -53,10 +54,10 @@ class VehicleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\Route  $route
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vehicle $vehicle)
+    public function edit(Route $route)
     {
         //
     }
@@ -64,11 +65,11 @@ class VehicleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateVehicleRequest  $request
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Http\Requests\UpdateRouteRequest  $request
+     * @param  \App\Models\Route  $route
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateVehicleRequest $request, Vehicle $vehicle)
+    public function update(UpdateRouteRequest $request, Route $route)
     {
         //
     }
@@ -76,10 +77,10 @@ class VehicleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\Route  $route
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vehicle $vehicle)
+    public function destroy(Route $route)
     {
         //
     }
