@@ -45,7 +45,8 @@ class RouteController extends Controller
      */
     public function show(Route $route)
     {
-        //
+        $routeResult = Route::find($route->id);
+        return response()->json($routeResult);
     }
 
     /**

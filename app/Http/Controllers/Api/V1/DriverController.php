@@ -53,7 +53,7 @@ class DriverController extends Controller
      */
     public function show(Driver $driver)
     {
-        $driverResult = Vehicle::find($driver->id);
+        $driverResult = Driver::find($driver->id);
         return response()->json($driverResult);
     }
 
@@ -101,7 +101,7 @@ class DriverController extends Controller
     {
         if ($driver->active) {
             $driver->update(['active' => false]);
-            return response()->json('info', 'Conductor Desactivado Correctamente');
+            return response()->json('Conductor Desactivado Correctamente');
         }
     }
 
@@ -109,7 +109,7 @@ class DriverController extends Controller
     {
         if ($driver->active === false) {
             $driver->update(['active' => true]);
-            return response()->json('info', 'Conductor Activado Correctamente');
+            return response()->json('Conductor Activado Correctamente');
         }
     }
 }

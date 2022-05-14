@@ -21,6 +21,6 @@ Route::group([
 
     Route::apiResource('drivers', DriverController::class);
     Route::apiResource('routes', RouteController::class);
-    Route::apiResource('scheduler', SchedulerController::class);
+    Route::apiResource('schedulers', SchedulerController::class);
     Route::apiResource('vehicles', VehicleController::class);
 });

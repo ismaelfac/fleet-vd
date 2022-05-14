@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade');
             $table->foreignId('route_id')->references('id')->on('routes')->onUpdate('cascade');
-            $table->string('week_num');
+            $table->double('week_num');
             $table->date('from');
             $table->date('to');
             $table->boolean('active')->default(false);
