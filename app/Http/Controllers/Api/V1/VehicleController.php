@@ -16,17 +16,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        return response()->json(Vehicle::all());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json(Vehicle::where('active',1)->get());
     }
 
     /**
@@ -37,7 +27,15 @@ class VehicleController extends Controller
      */
     public function store(StoreVehicleRequest $request)
     {
-        //
+        $vehicle = Vehicle::create([
+            'description' => $request['description'],
+            'year' => $request['year'],
+            'make' => $request['make'],
+            'capacity' => $request['capacity'],
+            'active' => true,
+            'user_id' => 1
+        ]);
+        return response()->json($vehicle);
     }
 
     /**
@@ -48,7 +46,8 @@ class VehicleController extends Controller
      */
     public function show(Vehicle $vehicle)
     {
-        //
+        $vehicleResult = Vehicle::find($vehicle->id);
+        return response()->json($vehicleResult);
     }
 
     /**
@@ -59,7 +58,7 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-        //
+        
     }
 
     /**
@@ -71,7 +70,14 @@ class VehicleController extends Controller
      */
     public function update(UpdateVehicleRequest $request, Vehicle $vehicle)
     {
-        //
+        $vehicle->description = $request->description;
+        $vehicle->year = $request->year;
+        $vehicle->make = $request->make;
+        $vehicle->capacity = $request->capacity;
+        $vehicle->active = true;
+        $vehicle->user_id = 1;
+        $vehicle->save();
+        return response()->json($vehicle);
     }
 
     /**
@@ -82,6 +88,9 @@ class VehicleController extends Controller
      */
     public function destroy(Vehicle $vehicle)
     {
-        //
+        if ($vehicle->active) {
+            $vehicle->update(['active' => false]);
+            return response()->json('Vehiculo Desactivado Correctamente');
+        }
     }
 }

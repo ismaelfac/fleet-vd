@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Driver;
+use Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDriverRequest;
 use App\Http\Requests\UpdateDriverRequest;
+use Log;
 
 class DriverController extends Controller
 {
@@ -19,15 +21,6 @@ class DriverController extends Controller
         return response()->json(Driver::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,7 +30,19 @@ class DriverController extends Controller
      */
     public function store(StoreDriverRequest $request)
     {
-        //
+        $driver = Driver::create([
+            'first_name' => $request['first_name'],
+            'last_name' => $request['last_name'],
+            'ssn' => $request['ssn'],
+            'dob' => $request['dob'],
+            'address' => $request['address'],
+            'city' => $request['city'],
+            'zip' => $request['zip'],
+            'phone' => $request['phone'],
+            'active' => true,
+            'user_id' => 1
+        ]);
+        return response()->json($driver);
     }
 
     /**
@@ -71,7 +76,7 @@ class DriverController extends Controller
      */
     public function update(UpdateDriverRequest $request, Driver $driver)
     {
-        //
+        
     }
 
     /**
@@ -82,6 +87,17 @@ class DriverController extends Controller
      */
     public function destroy(Driver $driver)
     {
-        //
+        if ($driver->active) {
+            $driver->update(['active' => false]);
+            return response()->json('info', 'Conductor Desactivado Correctamente');
+        }
+    }
+
+    public function restoreDrive(Driver $driver)
+    {
+        if ($driver->active === false) {
+            $driver->update(['active' => true]);
+            return response()->json('info', 'Conductor Activado Correctamente');
+        }
     }
 }

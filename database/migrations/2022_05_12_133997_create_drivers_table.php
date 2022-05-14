@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('ssn');
+            $table->string('ssn')->unique();
             $table->date('dob');
             $table->string('address');
             $table->string('city');
