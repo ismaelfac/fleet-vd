@@ -93,4 +93,12 @@ class VehicleController extends Controller
             return response()->json('Vehiculo Desactivado Correctamente');
         }
     }
+
+    public function restoreVehicle(Driver $vehicle)
+    {
+        if ($vehicle->active === false) {
+            $vehicle->update(['active' => true]);
+            return response()->json('info', 'Vehiculo Activado Correctamente');
+        }
+    }
 }

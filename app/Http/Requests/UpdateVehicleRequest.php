@@ -24,7 +24,10 @@ class UpdateVehicleRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'description' => 'required|string',
+            'year' => 'required|string',
+            'make' => 'required|string',
+            'capacity' => 'required|string'
         ];
     }
 

@@ -18,7 +18,7 @@ class DriverController extends Controller
      */
     public function index()
     {
-        return response()->json(Driver::all());
+        return response()->json(Driver::where('active',1)->get());
     }
 
 
@@ -53,7 +53,8 @@ class DriverController extends Controller
      */
     public function show(Driver $driver)
     {
-        //
+        $driverResult = Vehicle::find($driver->id);
+        return response()->json($driverResult);
     }
 
     /**
@@ -76,7 +77,18 @@ class DriverController extends Controller
      */
     public function update(UpdateDriverRequest $request, Driver $driver)
     {
-        
+        $driver->first_name = $request->first_name;
+        $driver->last_name = $request->last_name;
+        $driver->ssn = $request->ssn;
+        $driver->dob = $request->dob;
+        $driver->address = $request->address;
+        $driver->city = $request->city;
+        $driver->zip = $request->zip;
+        $driver->phone = $request->phone;
+        $driver->active = true;
+        $driver->user_id = 1;
+        $driver->save();
+        return response()->json($driver);
     }
 
     /**
