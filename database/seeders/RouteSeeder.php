@@ -23,7 +23,8 @@ class RouteSeeder extends Seeder
                 'driver_id' => $value['driver_id'],
                 'vehicle_id' => $value['vehicle_id'],
                 'description' => $value['description'],
-                'active' => $value['active']
+                'active' => $value['active'],
+                'user_id' => 1
             ]);
         }
     }

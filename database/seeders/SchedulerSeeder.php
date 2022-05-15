@@ -24,7 +24,8 @@ class SchedulerSeeder extends Seeder
                 'week_num' => $value['week_num'],
                 'from' => $value['from'],
                 'to' => $value['to'],
-                'active' => $value['active']
+                'active' => $value['active'],
+                'user_id' => 1
             ]);
         }
     }
