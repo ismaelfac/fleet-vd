@@ -13,7 +13,7 @@ class StoreSchedulerRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class StoreSchedulerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'route_id' => 'required|integer|exists:routes,id',
+            'week_num' => 'required|string',
+            'from' => 'required|date',
+            'to' => 'required|date'
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'route_id.required' => 'Se require la ruta',
+            'week_num.required' => 'Se requiere el numero de semanas',
+            'from.required' => 'Requiere de un ssn',
+            'to.required' => 'Requiere de un ssn'
         ];
     }
 }

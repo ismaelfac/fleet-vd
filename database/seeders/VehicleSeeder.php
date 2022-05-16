@@ -23,7 +23,8 @@ class VehicleSeeder extends Seeder
                 'year' => $value['year'],
                 'make' => $value['make'],
                 'capacity' => $value['capacity'],
-                'active' => $value['active']
+                'active' => $value['active'],
+                'user_id' => 1
             ]);
         }
     }

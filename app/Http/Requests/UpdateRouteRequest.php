@@ -13,7 +13,7 @@ class UpdateRouteRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class UpdateRouteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'driver_id' => 'required|integer|exists:drivers,id',
+            'vehicle_id' => 'required|integer|exists:vehicles,id',
+            'description' => 'required|string'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'driver_id.required' => 'Requiere de un nombre',
+            'vehicle_id.required' => 'Requiere de un apellido',
+            'description.required' => 'Requiere de un ssn'
         ];
     }
 }

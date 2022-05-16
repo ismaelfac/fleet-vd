@@ -16,17 +16,7 @@ class SchedulerController extends Controller
      */
     public function index()
     {
-        return response()->json(Scheduler::all());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json(Scheduler::where('active',1)->get());
     }
 
     /**
@@ -37,7 +27,15 @@ class SchedulerController extends Controller
      */
     public function store(StoreSchedulerRequest $request)
     {
-        //
+        $scheduler = scheduler::create([
+            'route_id' => $request['route_id'],
+            'week_num' => $request['week_num'],
+            'from' => $request['from'],
+            'to' => $request['to'],
+            'active' => true,
+            'user_id' => 1
+        ]);
+        return response()->json($scheduler);
     }
 
     /**
@@ -48,7 +46,8 @@ class SchedulerController extends Controller
      */
     public function show(Scheduler $scheduler)
     {
-        //
+        $schedulerResult = Scheduler::find($scheduler->id);
+        return response()->json($schedulerResult);
     }
 
     /**
@@ -59,7 +58,7 @@ class SchedulerController extends Controller
      */
     public function edit(Scheduler $scheduler)
     {
-        //
+        
     }
 
     /**
@@ -71,7 +70,14 @@ class SchedulerController extends Controller
      */
     public function update(UpdateSchedulerRequest $request, Scheduler $scheduler)
     {
-        //
+        $scheduler->route_id = $request->route_id;
+        $scheduler->week_num = $request->week_num;
+        $scheduler->from = $request->from;
+        $scheduler->to = $request->to;
+        $scheduler->active = true;
+        $scheduler->user_id = 1;
+        $scheduler->save();
+        return response()->json($scheduler);
     }
 
     /**
@@ -82,6 +88,17 @@ class SchedulerController extends Controller
      */
     public function destroy(Scheduler $scheduler)
     {
-        //
+        if ($scheduler->active) {
+            $scheduler->update(['active' => false]);
+            return response()->json('Programaciòn Desactivada Correctamente');
+        }
+    }
+
+    public function restoreScheduler(Driver $scheduler)
+    {
+        if ($scheduler->active === false) {
+            $scheduler->update(['active' => true]);
+            return response()->json('info', 'Programacion Activada Correctamente');
+        }
     }
 }

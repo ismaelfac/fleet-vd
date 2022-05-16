@@ -13,7 +13,7 @@ class UpdateVehicleRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class UpdateVehicleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'description' => 'required|string',
+            'year' => 'required|string',
+            'make' => 'required|string',
+            'capacity' => 'required|string'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'description.required' => 'Requiere de una descripcion',
+            'year.required' => 'Requiere del anio del vehiculo',
+            'make.required' => 'Requiere de un make',
+            'capacity.required' => 'Requiere de un capacity'
+
         ];
     }
 }

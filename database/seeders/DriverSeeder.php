@@ -28,7 +28,8 @@ class DriverSeeder extends Seeder
                 'city' => $value['city'],
                 'zip' => $value['zip'],
                 'phone' => $value['phone'],
-                'active' => $value['active']
+                'active' => $value['active'],
+                'user_id' => 1
             ]);
         }
     }
