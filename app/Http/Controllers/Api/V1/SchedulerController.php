@@ -6,6 +6,7 @@ use App\Models\Scheduler;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSchedulerRequest;
 use App\Http\Requests\UpdateSchedulerRequest;
+use Illuminate\Support\Facades\DB;
 
 class SchedulerController extends Controller
 {
@@ -16,7 +17,12 @@ class SchedulerController extends Controller
      */
     public function index()
     {
-        return response()->json(Scheduler::where('active',1)->get());
+        $scheduler = DB::table('schedulers')
+            ->leftJoin('routes', 'schedulers.route_id','=', 'routes.id')
+            ->select('schedulers.*', 'routes.description as ruta')
+            ->where('schedulers.active','=',true)
+            ->get();
+        return response()->json($scheduler);
     }
 
     /**
@@ -46,7 +52,11 @@ class SchedulerController extends Controller
      */
     public function show(Scheduler $scheduler)
     {
-        $schedulerResult = Scheduler::find($scheduler->id);
+        $schedulerResult = DB::table('schedulers')
+            ->leftJoin('routes', 'schedulers.route_id','=', 'routes.id')
+            ->select('schedulers.*', 'routes.description as ruta')
+            ->where('schedulers.id','=',$scheduler->id)
+            ->get();
         return response()->json($schedulerResult);
     }
 
