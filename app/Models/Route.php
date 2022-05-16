@@ -21,12 +21,12 @@ class Route extends Model
 
     public function Vehicle()
     {
-        return $this->hasMany('App\Models\Vehicle');
+        return $this->hasOne('App\Models\Vehicle');
     }
 
     public function Driver()
     {
-        return $this->hasMany('App\Models\Driver');
+        return $this->hasOne('App\Models\Driver');
     }
 
     public function Scheduler()

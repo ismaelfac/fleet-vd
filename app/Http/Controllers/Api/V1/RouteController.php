@@ -6,7 +6,9 @@ use App\Models\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRouteRequest;
 use App\Http\Requests\UpdateRouteRequest;
-
+use Carbon\Exceptions\Exception;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 class RouteController extends Controller
 {
     /**
@@ -16,7 +18,16 @@ class RouteController extends Controller
      */
     public function index()
     {
-        return response()->json(Route::where('active',1)->get());
+        try {
+            $routes = DB::table('routes')
+            ->leftJoin('drivers', 'routes.driver_id','=', 'drivers.id')
+            ->leftJoin('vehicles', 'routes.vehicle_id', '=', 'vehicles.id')
+            ->select('routes.*', 'drivers.first_name', 'drivers.last_name', 'vehicles.description as vehiculo')
+            ->get();
+            return response()->json($routes);
+        } catch (Exception $e) {
+            log::warning('Error al recibir la ruta');
+        }
     }
 
     /**
@@ -45,7 +56,12 @@ class RouteController extends Controller
      */
     public function show(Route $route)
     {
-        $routeResult = Route::find($route->id);
+        $routeResult = DB::table('routes')
+            ->leftJoin('drivers', 'routes.driver_id','=', 'drivers.id')
+            ->leftJoin('vehicles', 'routes.vehicle_id', '=', 'vehicles.id')
+            ->select('routes.*', 'drivers.first_name', 'drivers.last_name', 'vehicles.description as vehiculo')
+            ->where('routes.id','=', $route->id)
+            ->get();
         return response()->json($routeResult);
     }
 
@@ -57,7 +73,12 @@ class RouteController extends Controller
      */
     public function edit(Route $route)
     {
-        $routeResult = Route::find($route->id);
+        $routeResult = DB::table('routes')
+            ->leftJoin('drivers', 'routes.driver_id','=', 'drivers.id')
+            ->leftJoin('vehicles', 'routes.vehicle_id', '=', 'vehicles.id')
+            ->select('routes.*', 'drivers.first_name', 'drivers.last_name', 'vehicles.description as vehiculo')
+            ->where('route.id','=', $route->id)
+            ->get();
         return response()->json($routeResult);
     }
 
