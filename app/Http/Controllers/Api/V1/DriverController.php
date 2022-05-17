@@ -7,7 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDriverRequest;
 use App\Http\Requests\UpdateDriverRequest;
-use Log;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class DriverController extends Controller
 {
@@ -19,6 +20,12 @@ class DriverController extends Controller
     public function index()
     {
         return response()->json(Driver::where('active',1)->get());
+    }
+
+    public function getDriverFullName()
+    {
+        $driverFullName = DB::table('drivers')->select('id', DB::raw('concat(first_name," ",last_name) as full_name'))->get();
+        return response()->json($driverFullName);
     }
 
 

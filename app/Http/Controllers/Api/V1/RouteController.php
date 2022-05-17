@@ -22,11 +22,11 @@ class RouteController extends Controller
             $routes = DB::table('routes')
             ->leftJoin('drivers', 'routes.driver_id','=', 'drivers.id')
             ->leftJoin('vehicles', 'routes.vehicle_id', '=', 'vehicles.id')
-            ->select('routes.*', 'drivers.first_name', 'drivers.last_name', 'vehicles.description as vehiculo')
+            ->select('routes.*', DB::raw('concat(first_name," ",last_name) as full_name'), 'vehicles.description as vehicle')
             ->get();
             return response()->json($routes);
         } catch (Exception $e) {
-            log::warning('Error al recibir la ruta');
+            log::warning('Error al recibir las rutas');
         }
     }
 
@@ -59,7 +59,7 @@ class RouteController extends Controller
         $routeResult = DB::table('routes')
             ->leftJoin('drivers', 'routes.driver_id','=', 'drivers.id')
             ->leftJoin('vehicles', 'routes.vehicle_id', '=', 'vehicles.id')
-            ->select('routes.*', 'drivers.first_name', 'drivers.last_name', 'vehicles.description as vehiculo')
+            ->select('routes.*', DB::raw('concat(first_name," ",last_name) as full_name'), 'vehicles.description as vehiculo')
             ->where('routes.id','=', $route->id)
             ->get();
         return response()->json($routeResult);
@@ -76,7 +76,7 @@ class RouteController extends Controller
         $routeResult = DB::table('routes')
             ->leftJoin('drivers', 'routes.driver_id','=', 'drivers.id')
             ->leftJoin('vehicles', 'routes.vehicle_id', '=', 'vehicles.id')
-            ->select('routes.*', 'drivers.first_name', 'drivers.last_name', 'vehicles.description as vehiculo')
+            ->select('routes.*', DB::raw('concat(first_name," ",last_name) as full_name'), 'vehicles.description as vehiculo')
             ->where('route.id','=', $route->id)
             ->get();
         return response()->json($routeResult);

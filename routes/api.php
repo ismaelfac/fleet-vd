@@ -20,6 +20,7 @@ Route::group([
     Route::post('register',[AuthController::class, 'register'])->name('register');
 
     Route::apiResource('drivers', DriverController::class);
+    Route::get('getDriverFullName', [DriverController::class, 'getDriverFullName'])->name('getDriverFullName');
     Route::apiResource('routes', RouteController::class);
     Route::apiResource('schedulers', SchedulerController::class);
     Route::apiResource('vehicles', VehicleController::class);
